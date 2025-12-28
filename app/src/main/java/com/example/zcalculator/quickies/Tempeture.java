@@ -2,9 +2,12 @@ package com.example.zcalculator.quickies;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -19,12 +22,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.zcalculator.Quickies;
 import com.example.zcalculator.R;
+import com.google.android.material.button.MaterialButton;
 
 public class Tempeture extends AppCompatActivity {
     private Spinner spinner1,spinner2;
     private ImageButton btnReturn;
     private TextView unitTxt1,unitTxt2;
-    private EditText input1,input2;
+    private EditText input1,input2,activeInput;
+    private Boolean isUpdating = false;
+    private Button btn9,btn8,btn7,btn6,btn5,btn4,btn3,btn2,btn1,btn0;
+    private MaterialButton btnclear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,21 @@ public class Tempeture extends AppCompatActivity {
         unitTxt2 = findViewById(R.id.unitTxt2);
         input1 = findViewById(R.id.input1);
         input2 = findViewById(R.id.input2);
+        btn9= findViewById(R.id.btn9);
+        btn8= findViewById(R.id.btn8);
+        btn7= findViewById(R.id.btn7);
+        btn6= findViewById(R.id.btn6);
+        btn5= findViewById(R.id.btn5);
+        btn4= findViewById(R.id.btn4);
+        btn3= findViewById(R.id.btn3);
+        btn2= findViewById(R.id.btn2);
+        btn1= findViewById(R.id.btn1);
+        btn0= findViewById(R.id.btn0);
+        btnclear = findViewById(R.id.btnclear);
+
+
+
+
 
 
 
@@ -59,6 +81,48 @@ public class Tempeture extends AppCompatActivity {
 
         };
 
+        //Triggering action to each button number pad
+        btn0.setOnClickListener((e->{
+            appendToActiveInput("0");
+        }));
+        btn1.setOnClickListener((e->{
+            appendToActiveInput("1");
+        }));
+       
+        btn2.setOnClickListener((e->{
+            appendToActiveInput("2");
+        }));
+        btn3.setOnClickListener((e->{
+            appendToActiveInput("3");
+        }));
+        btn4.setOnClickListener((e->{
+            appendToActiveInput("4");
+        }));
+        btn5.setOnClickListener((e->{
+            appendToActiveInput("5");
+        }));
+        btn6.setOnClickListener((e->{
+            appendToActiveInput("6");
+        }));
+        btn7.setOnClickListener((e->{
+            appendToActiveInput("7");
+        }));
+        btn8.setOnClickListener((e->{
+            appendToActiveInput("8");
+        }));
+        btn9.setOnClickListener((e->{
+            appendToActiveInput("9");
+        }));
+        btnclear.setOnClickListener((e->{
+            if (activeInput==null) return;
+            String current = activeInput.getText().toString();
+            if (!current.isEmpty()){
+                activeInput.setText(current.substring(0,current.length()-1));
+
+
+            activeInput.setSelection(activeInput.getText().length()); }
+        }));
+
         ArrayAdapter<String> adapter =new ArrayAdapter<>(this, R.layout.spinner_item,temperatureUnits1);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner1.setAdapter(adapter);
@@ -70,6 +134,77 @@ public class Tempeture extends AppCompatActivity {
         btnReturn.setOnClickListener((e->{
             Intent intent = new Intent(Tempeture.this,Quickies.class);
             startActivity(intent);
+        }));
+
+
+        input1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (isUpdating) return;
+                if(charSequence.length()==0){
+                    input2.setText("");
+                    return;
+                }
+
+                isUpdating = true;
+                double value = Double.parseDouble(charSequence.toString());
+                String fromUnit = spinner1.getSelectedItem().toString();
+                String toUnit = spinner2.getSelectedItem().toString();
+
+                double result = convertTemperature(value,fromUnit,toUnit);
+                input2.setText(String.valueOf(result));
+                isUpdating =false;
+            }
+        });
+
+        input2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (isUpdating) return;
+                if (charSequence.length()==0){
+                    input1.setText("");
+                    return;
+                }
+                isUpdating =true;
+
+                double value = Double.parseDouble(charSequence.toString());
+                String fromUnit = spinner2.getSelectedItem().toString();
+                String toUnit = spinner1.getSelectedItem().toString();
+
+                double result= convertTemperature(value,fromUnit,toUnit);
+                input1.setText(String.valueOf(result));
+
+                isUpdating= false;
+            }
+        });
+
+        input1.setOnClickListener((e->{
+            activeInput =input1;
+        }));
+        input2.setOnClickListener((e->{
+            activeInput =input2;
         }));
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -90,6 +225,7 @@ public class Tempeture extends AppCompatActivity {
 
                 }
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -120,8 +256,42 @@ public class Tempeture extends AppCompatActivity {
         });
 
     }
-    private  void Celsius(){
+    private  double convertTemperature(double value,String from,String to){
 
+
+        if (from.equals(to)){
+            return value;
+        }
+        if(from.equals("Celsius")&&to.equals("Fahrenheit")){
+            return (value *9/5)+32;
+        }
+        if(from.equals("Fahrenheit")&&to.equals("Celsius")){
+            return (value -32)*5/9;
+        }
+        if(from.equals("Celsius")&&to.equals("Kelvin")){
+            return value+273.15;
+        }
+        if(from.equals("Kelvin")&&to.equals("Celsius")){
+            return value-273.15;
+        }
+        if(from.equals("Fahrenheit")&&to.equals("Kelvin")){
+            return (value-32)*5/9+273.15;
+        }
+        if(from.equals("Kelvin")&&to.equals("Fahrenheit")){
+            return (value-273.15)*9/5+32;
+        }
+
+        return  value;
+
+    }
+
+    private void appendToActiveInput(String text){
+        if (activeInput ==null) return;
+
+        String current = activeInput.getText().toString();
+        if (text.equals(".")&& current.contains(".")) return;
+            activeInput.setText(current+text);
+            activeInput.setSelection(activeInput.getText().length());
 
     }
 }

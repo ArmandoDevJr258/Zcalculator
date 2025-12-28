@@ -67,6 +67,8 @@
         android:textSize="25sp"
         android:textColor="@color/white"
         android:inputType="numberDecimal"
+        android:focusable="false"
+
         />
     <TextView
         android:id="@+id/unitTxt1"
@@ -105,6 +107,8 @@
         android:textSize="25sp"
         android:textColor="@color/white"
         android:inputType="numberDecimal"
+        android:focusable="false"
+
 
         />
     <TextView

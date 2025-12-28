@@ -121,7 +121,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/flash"
+                    android:background="@drawable/efficiency"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
@@ -147,7 +147,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/flash"
+                    android:background="@drawable/hourglass"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
@@ -173,7 +173,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/flash"
+                    android:background="@drawable/cloud_network"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
@@ -253,7 +253,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/flash"
+                    android:background="@drawable/maximize"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
@@ -278,7 +278,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/flash"
+                    android:background="@drawable/measure"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
@@ -304,7 +304,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/flash"
+                    android:background="@drawable/measure2"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
