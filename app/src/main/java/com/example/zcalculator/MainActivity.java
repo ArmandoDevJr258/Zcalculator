@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         graphCard= findViewById(R.id.graphCard);
         scantoSolveCard= findViewById(R.id.scantoSolveCard);
 
-        //
+        //oepn quickies screen
         quickiesCard.setOnClickListener((e->{
             Intent intent = new Intent(MainActivity.this, Quickies.class);
             startActivity(intent);
