@@ -61,11 +61,12 @@
         android:background="@drawable/input"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:paddingRight="50dp"
+        android:paddingRight="70dp"
         android:textDirection="rtl"
         android:textSize="25sp"
         android:textColor="@color/white"
         android:inputType="numberDecimal"
+        android:focusable="false"
         />
     <TextView
         android:id="@+id/unitTxt1"
@@ -98,11 +99,12 @@
         android:layout_marginRight="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/input"
-        android:paddingRight="50dp"
+        android:paddingRight="70dp"
         android:textDirection="rtl"
         android:textSize="25sp"
         android:textColor="@color/white"
         android:inputType="numberDecimal"
+        android:focusable="false"
         />
     <TextView
         android:id="@+id/unitTxt2"

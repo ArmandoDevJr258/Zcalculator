@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".quickies.Volume">
+    tools:context=".quickies.Energy">
+
 
     <LinearLayout
         android:id="@+id/header"
@@ -30,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volume"
+            android:text="Energy"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
@@ -62,7 +63,7 @@
         android:background="@drawable/input"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:paddingRight="70dp"
+        android:paddingRight="50dp"
         android:textDirection="rtl"
         android:textSize="25sp"
         android:textColor="@color/white"
@@ -73,7 +74,7 @@
         android:id="@+id/unitTxt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="L"
+        android:text="j"
         android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/input1"
@@ -100,7 +101,7 @@
         android:layout_marginRight="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/input"
-        android:paddingRight="70dp"
+        android:paddingRight="50dp"
         android:textDirection="rtl"
         android:textSize="25sp"
         android:textColor="@color/white"
@@ -111,7 +112,7 @@
         android:id="@+id/unitTxt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="L"
+        android:text="g"
         android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/input2"

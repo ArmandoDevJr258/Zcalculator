@@ -292,10 +292,10 @@ public class Time extends AppCompatActivity {
             return value*0.001;
         }
         if(from.equals("Milliseconds")&&to.equals("Days")){
-            return value-273.15;
+            return value*1.15740741E-8;
         }
         if(from.equals("Milliseconds")&&to.equals("Weeks")){
-            return (value-32)*5/9+273.15;
+            return value*1.65343915E-9;
         }
         if(from.equals("Milliseconds")&&to.equals("Months")){
             return (value-273.15)*9/5+32;
@@ -339,6 +339,85 @@ public class Time extends AppCompatActivity {
         }
 
         //from Hours
+        if(from.equals("Hours")&&to.equals("Milliseconds")){
+            return value*3600000;
+        }
+        if(from.equals("Hours")&&to.equals("Seconds")){
+            return value*3600;
+        }
+        if(from.equals("Hours")&&to.equals("Minutes")){
+            return value*60;
+        }
+        if(from.equals("Hours")&&to.equals("Days")){
+            return value*0.041667;
+        }
+        if(from.equals("Hours")&&to.equals("Weeks")){
+            return value*0.005952;
+        }
+        if(from.equals("Hours")&&to.equals("Years")){
+            return value*0.000114;
+        }
+
+        //from days
+        if(from.equals("Days")&&to.equals("Milliseconds")){
+            return value*86400000;
+        }
+        if(from.equals("Days")&&to.equals("Seconds")){
+            return value*86400;
+        }
+        if(from.equals("Days")&&to.equals("Minutes")){
+            return value*1440;
+        }
+        if(from.equals("Days")&&to.equals("Hours")){
+            return value*24;
+        }
+        if(from.equals("Days")&&to.equals("Weeks")){
+            return value*0.142857;
+        }
+        if(from.equals("Days")&&to.equals("Years")){
+            return value*0.002738;
+        }
+
+        //from weeks
+        if(from.equals("Weeks")&&to.equals("Milliseconds")){
+            return value*604800000;
+        }
+        if(from.equals("Weeks")&&to.equals("Seconds")){
+            return value*604800;
+        }
+        if(from.equals("Weeks")&&to.equals("Minutes")){
+            return value*10080;
+        }
+        if(from.equals("Weeks")&&to.equals("Hours")){
+            return value*168;
+        }
+        if(from.equals("Weeks")&&to.equals("Days")){
+            return value*7;
+        }
+        if(from.equals("Weeks")&&to.equals("Years")){
+            return value*0.019165;
+        }
+
+    //    from Years
+//        if(from.equals("Years")&&to.equals("Milliseconds")){
+//            return value* 31;
+//        }
+        if(from.equals("Years")&&to.equals("Seconds")){
+            return value*31557600;
+        }
+        if(from.equals("Years")&&to.equals("Minutes")){
+            return value*525960;
+        }
+        if(from.equals("Years")&&to.equals("Hours")){
+            return value*8766;
+        }
+        if(from.equals("Years")&&to.equals("Days")){
+            return value*365.25;
+        }
+        if(from.equals("Years")&&to.equals("Weeks")){
+            return value*52.17857;
+        }
+
 
 
         return  value;

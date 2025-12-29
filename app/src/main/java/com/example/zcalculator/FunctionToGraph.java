@@ -1,8 +1,9 @@
 package com.example.zcalculator;
 
-import android.content.Intent;
+import static android.view.View.VISIBLE;
+
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -11,38 +12,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Graphs extends AppCompatActivity {
-    private Button btnfunctiontoGraph;
+public class FunctionToGraph extends AppCompatActivity {
 
-    private ImageButton btnReturn;
+    private ImageButton showkeyPad;
+    private EditText functionInput,activeInput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_graphs);
+        setContentView(R.layout.activity_function_to_graph);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnReturn=findViewById(R.id.btnReturn);
-        btnfunctiontoGraph= findViewById(R.id.btnfunctiontoGraph);
+        showkeyPad = findViewById(R.id.showkeyPad);
+        functionInput= findViewById(R.id.functionInput);
 
 
-
-        //go to the Fuction to graph
-        btnfunctiontoGraph.setOnClickListener((e->{
-            Intent intent = new Intent(Graphs.this, FunctionToGraph.class);
-            startActivity(intent);
-        }));
+        functionInput.setOnClickListener((e->{
 
 
-
-
-        //return to home screen
-        btnReturn.setOnClickListener((e->{
-            Intent intent = new Intent(Graphs.this, MainActivity.class);
-            startActivity(intent);
+            showkeyPad.setVisibility(VISIBLE);
         }));
     }
 }

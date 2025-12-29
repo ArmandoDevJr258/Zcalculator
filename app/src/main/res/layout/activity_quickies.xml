@@ -110,6 +110,7 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/cardEnergy"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:orientation="vertical"
@@ -121,7 +122,7 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/efficiency"
+                    android:background="@drawable/fire"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
@@ -445,55 +446,10 @@
 
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:background="@drawable/card"
-                android:layout_margin="10dp"
-                >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:background="@drawable/card"
-                android:layout_margin="10dp"
-                >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:background="@drawable/card"
-                android:layout_margin="10dp"
-                >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:background="@drawable/card"
-                android:layout_margin="10dp"
-                >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:background="@drawable/card"
-                android:layout_margin="10dp"
-                >
-
-            </LinearLayout>
-            v
-            v
-            v
-            v
 
 
         </GridLayout>

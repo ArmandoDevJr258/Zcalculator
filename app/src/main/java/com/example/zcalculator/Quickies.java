@@ -13,13 +13,17 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.zcalculator.quickies.Area;
 import com.example.zcalculator.quickies.Data;
+import com.example.zcalculator.quickies.Energy;
 import com.example.zcalculator.quickies.Length;
+import com.example.zcalculator.quickies.Mass;
+import com.example.zcalculator.quickies.Speed;
 import com.example.zcalculator.quickies.Tempeture;
 import com.example.zcalculator.quickies.Time;
+import com.example.zcalculator.quickies.Volume;
 
 public class Quickies extends AppCompatActivity {
     private ImageButton btnReturn;
-    private LinearLayout cardTemperature,cardArea,cardTime,cardMass,cardLenght,cardSpeed,cardTip,cardVolume,cardData;
+    private LinearLayout cardTemperature,cardArea,cardTime,cardMass,cardLenght,cardSpeed,cardTip,cardVolume,cardData,cardEnergy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,8 @@ public class Quickies extends AppCompatActivity {
         cardSpeed = findViewById(R.id.cardSpeed);
         cardVolume = findViewById(R.id.cardVolume);
         cardData  = findViewById(R.id.cardData);
+        cardMass = findViewById(R.id.cardMass);
+        cardEnergy= findViewById(R.id.cardEnergy);
 
 
         //return to home screen
@@ -69,6 +75,26 @@ public class Quickies extends AppCompatActivity {
         //go to quick data scren
         cardData.setOnClickListener((e->{
             Intent intent = new Intent(Quickies.this, Data.class);
+            startActivity(intent);
+        }));
+        //go to cardVolume
+        cardVolume.setOnClickListener((e->{
+            Intent intent = new Intent(Quickies.this, Volume.class);
+            startActivity(intent);
+        }));
+        //go to ardMass
+        cardMass.setOnClickListener((e->{
+            Intent intent = new Intent(Quickies.this, Mass.class);
+            startActivity(intent);
+        }));
+        //go to cardSpeed
+        cardSpeed.setOnClickListener((e->{
+            Intent intent = new Intent(Quickies.this, Speed.class);
+            startActivity(intent);
+        }));
+        //go to cardEnergy
+        cardEnergy.setOnClickListener((e->{
+            Intent intent = new Intent(Quickies.this, Energy.class);
             startActivity(intent);
         }));
 

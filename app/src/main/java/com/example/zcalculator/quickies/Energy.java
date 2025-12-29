@@ -23,7 +23,8 @@ import com.example.zcalculator.Quickies;
 import com.example.zcalculator.R;
 import com.google.android.material.button.MaterialButton;
 
-public class Mass extends AppCompatActivity {
+public class Energy extends AppCompatActivity {
+
     private Spinner spinner1,spinner2;
     private ImageButton btnReturn;
     private TextView unitTxt1,unitTxt2;
@@ -36,12 +37,13 @@ public class Mass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_mass);
+        setContentView(R.layout.activity_energy);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         spinner1 =findViewById(R.id.spinner1);
         spinner2 = findViewById(R.id.spinner2);
         btnReturn = findViewById(R.id.btnReturn);
@@ -61,15 +63,15 @@ public class Mass extends AppCompatActivity {
         btn0= findViewById(R.id.btn0);
         btnclear = findViewById(R.id.btnclear);
 
-        String[] massUnits1 ={
-                "Grams",
-                "Kilograms",
-                "Tons"
+        String[] energyUnits1={
+                "Joules",
+                "Kilojoules"
+
         };
-        String[] massUnits2 ={
-                "Grams",
-                "Kilograms",
-                "Tons"
+        String[] energyUnits2={
+                "Joules",
+                "Kilojoules"
+
         };
 
         //Triggering action to each button number pad
@@ -114,20 +116,21 @@ public class Mass extends AppCompatActivity {
                 activeInput.setSelection(activeInput.getText().length()); }
         }));
 
-        ArrayAdapter<String> adapter =new ArrayAdapter<>(this, R.layout.spinner_item,massUnits1);
+        ArrayAdapter<String> adapter =new ArrayAdapter<>(this, R.layout.spinner_item,energyUnits1);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner1.setAdapter(adapter);
 
-        ArrayAdapter<String> adapter2 =new ArrayAdapter<>(this, R.layout.spinner_item,massUnits2);
+        ArrayAdapter<String> adapter2 =new ArrayAdapter<>(this, R.layout.spinner_item,energyUnits2);
         adapter2.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
 
         //return to Quickies Screen
         btnReturn.setOnClickListener((e->{
-            Intent intent = new Intent(Mass.this, Quickies.class);
+            Intent intent = new Intent(Energy.this, Quickies.class);
             startActivity(intent);
 
         }));
+
         input1.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable editable) {
@@ -153,7 +156,7 @@ public class Mass extends AppCompatActivity {
                 String fromUnit = spinner1.getSelectedItem().toString();
                 String toUnit = spinner2.getSelectedItem().toString();
 
-                double result = convertMass(value,fromUnit,toUnit);
+                double result = convertEnergy(value,fromUnit,toUnit);
                 input2.setText(String.valueOf(result));
                 isUpdating =false;
             }
@@ -184,7 +187,7 @@ public class Mass extends AppCompatActivity {
                 String fromUnit = spinner2.getSelectedItem().toString();
                 String toUnit = spinner1.getSelectedItem().toString();
 
-                double result= convertMass(value,fromUnit,toUnit);
+                double result= convertEnergy(value,fromUnit,toUnit);
                 input1.setText(String.valueOf(result));
 
                 isUpdating= false;
@@ -201,17 +204,14 @@ public class Mass extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String itemSelected =adapterView.getItemAtPosition(i).toString();
-                if (itemSelected.equals("Grams")){
-                    unitTxt1.setText("g");
+                if (itemSelected.equals("Jouls")){
+                    unitTxt1.setText("j");
 
-                } else if (itemSelected.equals("Kilograms")) {
-                    unitTxt1.setText("Kg");
-
-                }
-                else if (itemSelected.equals("Tons")) {
-                    unitTxt1.setText("t");
+                } else if (itemSelected.equals("Kilojoules")) {
+                    unitTxt1.setText("Kj");
 
                 }
+
 
             }
 
@@ -225,15 +225,11 @@ public class Mass extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String itemSelected =adapterView.getItemAtPosition(i).toString();
-                if (itemSelected.equals("Grams")){
-                    unitTxt2.setText("g");
+                if (itemSelected.equals("Jouls")){
+                    unitTxt2.setText("j");
 
-                } else if (itemSelected.equals("Kilograms")) {
-                    unitTxt2.setText("Kg");
-
-                }
-                else if (itemSelected.equals("Tons")) {
-                    unitTxt2.setText("t");
+                } else if (itemSelected.equals("Kilojoules")) {
+                    unitTxt2.setText("Kj");
 
                 }
             }
@@ -244,27 +240,23 @@ public class Mass extends AppCompatActivity {
             }
         });
     }
-    private  double convertMass(double value,String from,String to){
+    private  double convertEnergy(double value,String from,String to){
 
 
         if (from.equals(to)){
             return value;
         }
-        //from Grams
-        if(from.equals("Grams")&&to.equals("Kilograms")){
+        //from Joules
+        if(from.equals("Joules")&&to.equals("Kilojoules")){
             return value*0.001;
-        }
-        if(from.equals("Grams")&&to.equals("Tons")){
-            return value*0.000001;
         }
 
-        //from Kilograms
-        if(from.equals("Kilograms")&&to.equals("Grams")){
+
+        //from Kilojoules
+        if(from.equals("Kilojoules")&&to.equals("Joules")){
             return value*1000;
         }
-        if(from.equals("Kilograms")&&to.equals("Tons")){
-            return value*0.001;
-        }
+
 
 
         //from Tons

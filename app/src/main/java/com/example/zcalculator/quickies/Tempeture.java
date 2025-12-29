@@ -30,7 +30,7 @@ public class Tempeture extends AppCompatActivity {
     private TextView unitTxt1,unitTxt2;
     private EditText input1,input2,activeInput;
     private Boolean isUpdating = false;
-    private Button btn9,btn8,btn7,btn6,btn5,btn4,btn3,btn2,btn1,btn0;
+    private Button btn9,btn8,btn7,btn6,btn5,btn4,btn3,btn2,btn1,btn0,btnc;
     private MaterialButton btnclear;
 
     @Override
@@ -61,6 +61,7 @@ public class Tempeture extends AppCompatActivity {
         btn1= findViewById(R.id.btn1);
         btn0= findViewById(R.id.btn0);
         btnclear = findViewById(R.id.btnclear);
+        btnc= findViewById(R.id.btnc);
 
 
 
@@ -122,6 +123,14 @@ public class Tempeture extends AppCompatActivity {
 
             activeInput.setSelection(activeInput.getText().length()); }
         }));
+//        btnc.setOnClickListener((e->{
+//            if (activeInput==null) return;
+//            String current = activeInput.getText().toString();
+//            if (!current.isEmpty()){
+//
+//
+//                 }
+//        }));
 
         ArrayAdapter<String> adapter =new ArrayAdapter<>(this, R.layout.spinner_item,temperatureUnits1);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
