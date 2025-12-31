@@ -123,14 +123,14 @@ public class Tempeture extends AppCompatActivity {
 
             activeInput.setSelection(activeInput.getText().length()); }
         }));
-//        btnc.setOnClickListener((e->{
-//            if (activeInput==null) return;
-//            String current = activeInput.getText().toString();
-//            if (!current.isEmpty()){
-//
-//
-//                 }
-//        }));
+        btnc.setOnClickListener((e->{
+            if (activeInput==null) return;
+            String current = activeInput.getText().toString();
+            if (!current.isEmpty()){
+
+
+                 }
+        }));
 
         ArrayAdapter<String> adapter =new ArrayAdapter<>(this, R.layout.spinner_item,temperatureUnits1);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
@@ -161,10 +161,13 @@ public class Tempeture extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 if (isUpdating) return;
-                if(charSequence.length()==0){
+                if (charSequence.length() == 0) {
+                    isUpdating = true;
                     input2.setText("");
+                    isUpdating = false;
                     return;
                 }
+
 
                 isUpdating = true;
                 double value = Double.parseDouble(charSequence.toString());
@@ -192,10 +195,13 @@ public class Tempeture extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
                 if (isUpdating) return;
-                if (charSequence.length()==0){
+                if (charSequence.length() == 0) {
+                    isUpdating = true;
                     input1.setText("");
+                    isUpdating = false;
                     return;
                 }
+
                 isUpdating =true;
 
                 double value = Double.parseDouble(charSequence.toString());
@@ -222,15 +228,21 @@ public class Tempeture extends AppCompatActivity {
                 String selectedItem =adapterView.getItemAtPosition(i).toString();
                 if (selectedItem.equals("Celsius")){
                     unitTxt1.setText("ºC");
+                    input1.setText("");
+                    input2.setText("");
 
 
 
 
                 } else if (selectedItem.equals("Kelvin")) {
                     unitTxt1.setText("K");
+                    input1.setText("");
+                    input2.setText("");
 
                 }else if (selectedItem.equals("Fahrenheit")) {
                     unitTxt1.setText("ºF");
+                    input1.setText("");
+                    input2.setText("");
 
                 }
             }
@@ -247,13 +259,19 @@ public class Tempeture extends AppCompatActivity {
                 String selectedItem = adapterView.getItemAtPosition(i).toString();
                 if (selectedItem.equals("Celsius")){
                     unitTxt2.setText("ºC");
+                    input1.setText("");
+                    input2.setText("");
 
                 } else if (selectedItem.equals("Kelvin")) {
                     unitTxt2.setText("K");
+                    input1.setText("");
+                    input2.setText("");
 
                 }
                 else if (selectedItem.equals("Fahrenheit")) {
                     unitTxt2.setText("ºF");
+                    input1.setText("");
+                    input2.setText("");
 
                 }
             }

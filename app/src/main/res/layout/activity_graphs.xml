@@ -37,19 +37,22 @@
 
     <Button
         android:id="@+id/btnfunctiontoGraph"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:text="function to graph"
         android:textSize="17sp"
         android:textStyle="italic"
-        app:layout_constraintTop_toBottomOf="@id/header"
+       app:layout_constraintTop_toBottomOf="@id/header"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnexplore"
+
         android:background="@drawable/buttonshape"
         android:layout_marginLeft="20dp"
         />
     <Button
-        android:layout_width="180dp"
+        android:id="@+id/btnexplore"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:text="Explore  graphs"
         android:textSize="17sp"
@@ -57,9 +60,11 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toEndOf="@+id/btnfunctiontoGraph"
+        app:layout_constraintEnd_toEndOf="parent"
 
         android:background="@drawable/buttonshape"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

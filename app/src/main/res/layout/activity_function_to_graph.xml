@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/btnReturn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/back"
@@ -35,11 +36,14 @@
             />
     </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/graphWindow"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="600dp"
         app:layout_constraintTop_toBottomOf="@+id/header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+
         >
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/lineChart"
@@ -53,12 +57,45 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/quickoptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graphWindow"
+        app:layout_constraintBottom_toTopOf="@+id/inputLayout"
+        android:padding="5dp"
+
+        >
+        <ImageButton
+            android:id="@+id/btnresize"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/zoom_in"
+            android:backgroundTint="@color/white"
+            />
+        <ImageButton
+            android:id="@+id/btnTakeScreenshot"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintStart_toEndOf="@+id/btnresize"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/photo_camera"
+            android:backgroundTint="@color/white"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:padding="5dp"
         >
 
