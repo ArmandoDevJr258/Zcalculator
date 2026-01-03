@@ -5,6 +5,8 @@ import static android.view.View.VISIBLE;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,13 +19,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 
 public class MainCalculator extends AppCompatActivity {
     private LinearLayout header;
     private ConstraintLayout  basicCalculatorLayout,cientificCalculatorLayout;
     private ImageButton btnrReturn;
     private TextView txtbasic,txtcientific;
-    private EditText operationinput,resultinput;
+    private EditText operationinput,resultinput,activeInput;
     private Button btnc,btnparenteses,btnpercent,btnequals,btn9,btn8,btn7,btn6,btn5,btn4,btn3,btn2,btn1,btn0,btndot,btnplus,btnminus,btntimes,btndevide;
 
     private double firstOperand =0;
@@ -31,6 +36,7 @@ public class MainCalculator extends AppCompatActivity {
      private String currentOperator ="";
     private  boolean isOperatorClicked  = false;
     private boolean justPressedOperator = false;
+    private Boolean isUpdating = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,70 +79,84 @@ public class MainCalculator extends AppCompatActivity {
 
 
         btn9.setOnClickListener((e->{
-            addNumber("9");
+            appendToActiveInput("9");
         }));
 
         btn8.setOnClickListener((e->{
-            addNumber(btn8.getText().toString());
+            appendToActiveInput("8");
         }));
 
         btn7.setOnClickListener((e->{
-            addNumber(btn7.getText().toString());
+            appendToActiveInput("7");
+
         }));
 
         btn6.setOnClickListener((e->{
-            addNumber(btn6.getText().toString());
+            appendToActiveInput("6");
         }));
 
         btn5.setOnClickListener((e->{
-            addNumber(btn5.getText().toString());
+            appendToActiveInput("5");
         }));
 
         btn4.setOnClickListener((e->{
-            addNumber(btn4.getText().toString());
+            appendToActiveInput("4");
         }));
 
         btn3.setOnClickListener((e->{
-            addNumber(btn3.getText().toString());
+            appendToActiveInput("3");
         }));
 
         btn2.setOnClickListener((e->{
-            addNumber(btn2.getText().toString());
+            appendToActiveInput("2");
         }));
 
         btn1.setOnClickListener((e->{
-            addNumber(btn1.getText().toString());
+            appendToActiveInput("1");
         }));
 
         btn0.setOnClickListener((e->{
-            addNumber(btn0.getText().toString());
+            appendToActiveInput("0");
         }));
+        btnparenteses.setOnClickListener(e -> {
+            handleParentheses();
+        });
+
+
+        btnpercent.setOnClickListener(e -> {
+            appendToActiveInput("%");
+        });
 
         btndot.setOnClickListener((e->{
-            addNumber(btndot.getText().toString());
+            appendToActiveInput(".");
         }));
 
-        btnequals.setOnClickListener((e->{
-          calculteResult();
-        }));
+        btnequals.setOnClickListener(e -> {
+            calculateResult();
+        });
 
 
-        btnc.setOnClickListener((e->{
-            clearAll();
-        }));
+
+        btnc.setOnClickListener(e -> {
+            operationinput.setText("");
+            resultinput.setText("");
+        });
+
 
 
         btnplus.setOnClickListener((e->{
-           clickOperator("+");
+            appendToActiveInput("+");
+
         }));
         btnminus.setOnClickListener((e->{
-            clickOperator("-");
+            appendToActiveInput("-");
         }));
         btntimes.setOnClickListener((e->{
-            clickOperator("*");
+            appendToActiveInput("*");
         }));
         btndevide.setOnClickListener((e->{
-            clickOperator("/");
+
+            appendToActiveInput("/");
         }));
 
         //return to home screen
@@ -155,6 +175,43 @@ public class MainCalculator extends AppCompatActivity {
             cientificCalculatorLayout.setVisibility(VISIBLE);
             changeCalculator(txtcientific);
         }));
+        operationinput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (isUpdating) return;
+                if (charSequence.length() == 0) {
+                    isUpdating = true;
+                    operationinput.setText("");
+                    isUpdating = false;
+                    return;
+                }
+
+
+                isUpdating = true;
+//                double value = Double.parseDouble(charSequence.toString());
+//                String fromUnit = spinner1.getSelectedItem().toString();
+//                String toUnit = spinner2.getSelectedItem().toString();
+//
+//                double result = convertTemperature(value,fromUnit,toUnit);
+//                input2.setText(String.valueOf(result));
+//                isUpdating =false;
+            }
+        });
+        activeInput= operationinput;
+        operationinput.setOnClickListener((e->{
+            activeInput =operationinput;
+        }));
 
 
     }
@@ -170,80 +227,111 @@ public class MainCalculator extends AppCompatActivity {
 
         }
     }
-    private void addNumber(String number) {
-        // 1. Update the top display (the full expression)
-        operationinput.append(number);
+    private void appendToActiveInput(String text) {
+        if (activeInput == null) return;
 
-        // 2. Update the bottom display (the current number being typed)
-        if (isOperatorClicked) {
-            // If an operator was just pressed, start a new number
-            resultinput.setText(number);
-            isOperatorClicked = false;
-        } else {
-            // Otherwise, keep appending digits (e.g., 8 then 3 makes 83)
-            resultinput.append(number);
-        }
-    }
+        String current = activeInput.getText().toString();
 
-    private void clickOperator(String operator) {
-        String currentVal = resultinput.getText().toString();
+        // Prevent starting with operators except '('
+        if (current.isEmpty() && "+*/)%".contains(text)) return;
 
-        // Prevent clicking operator if no number exists
-        if (currentVal.isEmpty() || currentVal.equals(".")) return;
+        // Prevent double operators
+        if (!current.isEmpty()) {
+            char last = current.charAt(current.length() - 1);
 
-        // Store the first number
-        firstOperand = Double.parseDouble(currentVal);
-        currentOperator = operator;
-
-        // Tell addNumber that the next digit belongs to the second operand
-        isOperatorClicked = true;
-
-        // Update top display: "8" becomes "8 + "
-        operationinput.append(" " + operator + " ");
-    }
-
-    private void calculteResult() {
-        String currentVal = resultinput.getText().toString();
-
-        // Validation: need an operator and a second number
-        if (currentOperator.isEmpty() || currentVal.isEmpty()) return;
-
-        secondOperand = Double.parseDouble(currentVal);
-        double result = 0;
-
-        switch (currentOperator) {
-            case "+": result = firstOperand + secondOperand; break;
-            case "-": result = firstOperand - secondOperand; break;
-            case "*": result = firstOperand * secondOperand; break;
-            case "/":
-                if (secondOperand == 0) {
-                    resultinput.setText("Error");
-                    return;
-                }
-                result = firstOperand / secondOperand;
-                break;
+            if ("+-*/".contains(text) && "+-*/".indexOf(last) != -1) return;
+            if (text.equals(")") && "+-*/(".indexOf(last) != -1) return;
+            if (text.equals("%") && last == '%') return;
         }
 
-        // Display the final result in the bottom
-        resultinput.setText(String.valueOf(result));
+        activeInput.setText(current + text);
+        activeInput.setSelection(activeInput.getText().length());
+    }
 
-        // Reset the top display to show just the result for the next operation
-        operationinput.setText(String.valueOf(result));
+    private void calculateResult() {
+        String expressionText = operationinput.getText().toString();
+        if (expressionText.isEmpty()) return;
 
-        // Prepare for continuous calculation (e.g., result + 5)
-        firstOperand = result;
-        currentOperator = "";
-        isOperatorClicked = true;
+        try {
+            expressionText = autoCloseParentheses(expressionText);
+            expressionText = handlePercentage(expressionText);
+
+            Expression expression = new ExpressionBuilder(expressionText).build();
+            double result = expression.evaluate();
+
+            if (result == (long) result) {
+                resultinput.setText(String.valueOf((long) result));
+            } else {
+                resultinput.setText(String.valueOf(result));
+            }
+
+        } catch (Exception e) {
+            resultinput.setText("Error");
+        }
+    }
+    private String autoCloseParentheses(String expr) {
+        int open = 0, close = 0;
+
+        for (char c : expr.toCharArray()) {
+            if (c == '(') open++;
+            if (c == ')') close++;
+        }
+
+        while (open > close) {
+            expr += ")";
+            close++;
+        }
+
+        return expr;
+    }
+
+    private String handlePercentage(String expr) {
+
+        // 50% -> (50/100)
+        expr = expr.replaceAll("(\\d+(?:\\.\\d+)?)%", "($1/100)");
+
+        // Handle: A + B%  OR  A - B%
+        expr = expr.replaceAll(
+                "(\\d+(?:\\.\\d+)?)([+-])\\((\\d+(?:\\.\\d+)?)/100\\)",
+                "($1$2($1*$3/100))"
+        );
+
+        // Handle: A * B%  OR  A / B%
+        expr = expr.replaceAll(
+                "(\\d+(?:\\.\\d+)?)([*/])\\((\\d+(?:\\.\\d+)?)/100\\)",
+                "($1$2($3/100))"
+        );
+
+        return expr;
+    }
+    private void handleParentheses() {
+        String text = operationinput.getText().toString();
+
+        int openCount = 0;
+        int closeCount = 0;
+
+        for (char c : text.toCharArray()) {
+            if (c == '(') openCount++;
+            if (c == ')') closeCount++;
+        }
+
+        // If empty or last char is operator or '(' → add '('
+        if (text.isEmpty() ||
+                "+-*/(".contains(String.valueOf(text.charAt(text.length() - 1)))) {
+            appendToActiveInput("(");
+            return;
+        }
+
+        // If there are unclosed '(' → add ')'
+        if (openCount > closeCount) {
+            appendToActiveInput(")");
+            return;
+        }
+
+        // Otherwise add '('
+        appendToActiveInput("(");
     }
 
 
-    private  void  clearAll(){
-        operationinput.setText("");
-        resultinput.setText("");
-        firstOperand= 0;
-        secondOperand = 0;
-        currentOperator = "";
-        isOperatorClicked = false;
-    }
 
 }
