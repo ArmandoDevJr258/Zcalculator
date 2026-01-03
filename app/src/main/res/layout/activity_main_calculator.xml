@@ -53,6 +53,16 @@
             android:focusable="true"
             android:alpha="0.3"
             />
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/history"
+            android:backgroundTint="@color/white"
+
+            />
 
     </LinearLayout>
 
@@ -63,6 +73,7 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
 
 
 
@@ -79,6 +90,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:focusable="false"
+            android:textSize="25sp"
+            android:paddingLeft="30dp"
 
             />
         <EditText
@@ -91,6 +104,8 @@
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:focusable="false"
+            android:textDirection="rtl"
+            android:paddingRight="50dp"
 
             />
         <Button
@@ -104,7 +119,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnparenteses"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#ff0000"
 
             />
@@ -118,7 +133,7 @@
             app:layout_constraintStart_toEndOf="@id/btnc"
             app:layout_constraintEnd_toStartOf="@id/btnpercent"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btnpercent"
@@ -130,7 +145,7 @@
             app:layout_constraintStart_toEndOf="@id/btnparenteses"
             app:layout_constraintEnd_toStartOf="@id/btnequals"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
 
         <Button
@@ -144,7 +159,7 @@
             app:layout_constraintStart_toEndOf="@id/btnpercent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#ffd402"
             />
         <Button
@@ -157,7 +172,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn8"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btn8"
@@ -169,7 +184,7 @@
             app:layout_constraintStart_toEndOf="@id/btn9"
             app:layout_constraintEnd_toStartOf="@id/btn7"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btn7"
@@ -181,7 +196,7 @@
             app:layout_constraintStart_toEndOf="@id/btn8"
             app:layout_constraintEnd_toStartOf="@id/btnplus"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btnplus"
@@ -193,7 +208,7 @@
             app:layout_constraintStart_toEndOf="@id/btn7"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#ffd402"
             />
 
@@ -207,7 +222,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn5"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btn5"
@@ -219,7 +234,7 @@
             app:layout_constraintStart_toEndOf="@id/btn6"
             app:layout_constraintEnd_toStartOf="@id/btn4"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btn4"
@@ -231,7 +246,7 @@
             app:layout_constraintStart_toEndOf="@id/btn5"
             app:layout_constraintEnd_toStartOf="@id/btnminus"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btnminus"
@@ -243,7 +258,7 @@
             app:layout_constraintStart_toEndOf="@id/btn4"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#ffd402"
             />
         <Button
@@ -256,7 +271,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn2"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btn2"
@@ -268,7 +283,7 @@
             app:layout_constraintStart_toEndOf="@id/btn3"
             app:layout_constraintEnd_toStartOf="@id/btn1"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btn1"
@@ -280,7 +295,7 @@
             app:layout_constraintStart_toEndOf="@id/btn2"
             app:layout_constraintEnd_toStartOf="@id/btntimes"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btntimes"
@@ -292,7 +307,7 @@
             app:layout_constraintStart_toEndOf="@id/btn1"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#ffd402"
             />
 
@@ -306,7 +321,7 @@
             app:layout_constraintStart_toEndOf="@+id/btndot"
             app:layout_constraintEnd_toStartOf="@id/btndevide"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btndot"
@@ -318,7 +333,7 @@
             app:layout_constraintStart_toEndOf="@id/btnq"
             app:layout_constraintEnd_toStartOf="@id/btn0"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btnq"
@@ -331,7 +346,7 @@
 
             app:layout_constraintEnd_toStartOf="@id/btndot"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             />
         <Button
             android:id="@+id/btndevide"
@@ -343,7 +358,7 @@
             app:layout_constraintStart_toEndOf="@id/btn0"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/buttonshape"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:textColor="#ffd402"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -354,7 +369,8 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="invisible"
+        android:visibility="gone"
+
 
 
 
@@ -368,6 +384,9 @@
             android:inputType="number"
             android:hint="0"
             app:layout_constraintTop_toBottomOf="@id/header"
+            android:paddingLeft="50dp"
+            android:textSize="50sp"
+
             tools:ignore="NotSibling" />
         <EditText
             android:id="@+id/resulstinput"
@@ -375,225 +394,249 @@
             android:layout_height="90dp"
             app:layout_constraintTop_toBottomOf="@id/operainput"
             android:inputType="number"
+            android:paddingRight="50dp"
             android:hint="0"
             android:focusable="false"
             android:clickable="false"
+            android:textSize="20sp"
+            android:textDirection="rtl"
             android:cursorVisible="false"
             />
         <Button
             android:id="@+id/cfbtnc"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             android:text="C"
             android:textColor="#ff0000"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cfbtnparenteses"
             app:layout_constraintTop_toBottomOf="@id/resulstinput" />
         <Button
             android:id="@+id/cfbtnparenteses"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="( )"
             app:layout_constraintTop_toBottomOf="@id/resulstinput"
             app:layout_constraintStart_toEndOf="@id/cfbtnc"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@id/cfbtnpercent"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnpercent"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="%"
             app:layout_constraintTop_toBottomOf="@id/resulstinput"
             app:layout_constraintStart_toEndOf="@id/cfbtnparenteses"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@id/cfbtnwhat"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnwhat"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="www"
             app:layout_constraintTop_toBottomOf="@id/resulstinput"
-            app:layout_constraintStart_toEndOf="@id/cfbtn7"
-            android:layout_margin="10dp"
+            app:layout_constraintStart_toEndOf="@id/cfbtnpercent"
+            app:layout_constraintEnd_toStartOf="@id/cfbtnequals"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnequals"
-            android:layout_width="75dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="="
             android:textSize="30sp"
             app:layout_constraintTop_toBottomOf="@id/resulstinput"
             app:layout_constraintStart_toEndOf="@id/cfbtnwhat"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
+            app:layout_constraintEnd_toEndOf="parent"
             android:textColor="#ffd402"
             />
 
 
         <Button
             android:id="@+id/cfbtn9"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="9"
             app:layout_constraintTop_toBottomOf="@id/cfbtnc"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtn8"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtn8"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="8"
             app:layout_constraintTop_toBottomOf="@id/cfbtnparenteses"
             app:layout_constraintStart_toEndOf="@id/cfbtn9"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@id/cfbtn7"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtn7"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="7"
             app:layout_constraintTop_toBottomOf="@id/cfbtnpercent"
             app:layout_constraintStart_toEndOf="@id/cfbtn8"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@id/cfbtnrad"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
 
         <Button
             android:id="@+id/cfbtnrad"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="Rad"
             app:layout_constraintTop_toBottomOf="@id/cfbtnequals"
             app:layout_constraintStart_toEndOf="@id/cfbtn7"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnplus"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnplus"
-            android:layout_width="75dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             android:text="+"
             android:textColor="#ffd402"
             android:textSize="30sp"
             app:layout_constraintStart_toEndOf="@id/cfbtnrad"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cfbtnwhat" />
 
 
         <Button
             android:id="@+id/cfbtn6"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="6"
             app:layout_constraintTop_toBottomOf="@id/cfbtn9"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtn5"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtn5"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="5"
             app:layout_constraintTop_toBottomOf="@id/cfbtn8"
             app:layout_constraintStart_toEndOf="@id/cfbtn6"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtn4"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtn4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="4"
             app:layout_constraintTop_toBottomOf="@id/cfbtn7"
             app:layout_constraintStart_toEndOf="@id/cfbtn5"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnsin"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
 
         <Button
             android:id="@+id/cfbtnsin"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="Sin"
             app:layout_constraintTop_toBottomOf="@id/cfbtnrad"
             app:layout_constraintStart_toEndOf="@id/cfbtn4"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnminus"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
         android:id="@+id/cfbtnminus"
-        android:layout_width="75dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
         android:text="-"
         android:textSize="30dp"
         app:layout_constraintTop_toBottomOf="@id/cfbtnplus"
         app:layout_constraintStart_toEndOf="@id/cfbtnsin"
-        android:layout_margin="10dp"
+            android:layout_margin="5dp"
         android:background="@drawable/buttonshape"
+            app:layout_constraintEnd_toEndOf="parent"
         android:textColor="#ffd402"
         />
 
 
         <Button
             android:id="@+id/cfbtn3"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="3"
             app:layout_constraintTop_toBottomOf="@id/cfbtn6"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtn2"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtn2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="2"
             app:layout_constraintTop_toBottomOf="@id/cfbtn5"
             app:layout_constraintStart_toEndOf="@id/cfbtn3"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtn1"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtn1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="1"
             app:layout_constraintTop_toBottomOf="@id/cfbtn4"
             app:layout_constraintStart_toEndOf="@id/cfbtn2"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtncos"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
         android:id="@+id/cfbtncos"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
         android:text="Cos"
         app:layout_constraintTop_toBottomOf="@id/cfbtnsin"
         app:layout_constraintStart_toEndOf="@id/cfbtn1"
-        android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtntimes"
+            android:layout_margin="5dp"
         android:background="@drawable/buttonshape"
         />
         <Button
             android:id="@+id/cfbtntimes"
-            android:layout_width="75dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="X"
             android:textSize="30sp"
             app:layout_constraintTop_toBottomOf="@id/cfbtnminus"
             app:layout_constraintStart_toEndOf="@id/cfbtncos"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             android:textColor="#ffd402"
             />
@@ -603,53 +646,57 @@
 
         <Button
             android:id="@+id/cfbtn0"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="0"
             app:layout_constraintTop_toBottomOf="@id/cfbtn3"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtndot"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtndot"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="."
             app:layout_constraintTop_toBottomOf="@id/cfbtn2"
             app:layout_constraintStart_toEndOf="@id/cfbtn0"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnplusminus"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnplusminus"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="+/-"
             app:layout_constraintTop_toBottomOf="@id/cfbtn1"
             app:layout_constraintStart_toEndOf="@id/cfbtndot"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtntang"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
         android:id="@+id/cfbtntang"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
         android:text="Tan"
         app:layout_constraintTop_toBottomOf="@id/cfbtncos"
-        app:layout_constraintStart_toEndOf="@id/cfbtnplusminus"
-        android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtndevide"
+        app:layout_constraintStart_toEndOf="@id/cfbtnplusminus" android:layout_margin="5dp"
         android:background="@drawable/buttonshape"
         />
         <Button
             android:id="@+id/cfbtndevide"
-            android:layout_width="75dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="/"
             android:textSize="30sp"
             app:layout_constraintTop_toBottomOf="@id/cfbtntimes"
             app:layout_constraintStart_toEndOf="@id/cfbtntang"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             android:textColor="#ffd402"
             />
@@ -657,52 +704,57 @@
 
         <Button
             android:id="@+id/cfbtne"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="e"
             app:layout_constraintTop_toBottomOf="@id/cfbtn0"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnpi"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnpi"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="pi"
             app:layout_constraintTop_toBottomOf="@id/cfbtndot"
-            app:layout_constraintStart_toEndOf="@id/cfbtn9"
-            android:layout_margin="10dp"
+            app:layout_constraintStart_toEndOf="@id/cfbtne"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnmodule"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnmodule"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="module"
             app:layout_constraintTop_toBottomOf="@id/cfbtnplusminus"
-            app:layout_constraintStart_toEndOf="@id/cfbtn8"
-            android:layout_margin="10dp"
+            app:layout_constraintStart_toEndOf="@id/cfbtnpi"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnlog"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnlog"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="lg"
             app:layout_constraintTop_toBottomOf="@id/cfbtndevide"
             app:layout_constraintStart_toEndOf="@id/cfbtnmodule"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cfbtnfatorial"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
             android:id="@+id/cfbtnfatorial"
-            android:layout_width="75dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
             android:text="n!"
             app:layout_constraintTop_toBottomOf="@id/cfbtntang"
             app:layout_constraintStart_toEndOf="@id/cfbtnlog"
-            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
 
@@ -715,7 +767,7 @@
             android:text="root"
             app:layout_constraintTop_toBottomOf="@id/cfbtne"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
@@ -725,7 +777,7 @@
             android:text="Ln"
             app:layout_constraintTop_toBottomOf="@id/cfbtnpi"
             app:layout_constraintStart_toEndOf="@id/cfbtnroot"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
         <Button
@@ -735,7 +787,7 @@
             android:text="exp"
             app:layout_constraintTop_toBottomOf="@id/cfbtnmodule"
             app:layout_constraintStart_toEndOf="@id/cfbtnln"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             />
 
