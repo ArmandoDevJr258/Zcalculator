@@ -66,7 +66,7 @@ public class ScannedExpression extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            
+
             return "Error: invalid math expression";
         }
     }

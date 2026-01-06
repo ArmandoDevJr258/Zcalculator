@@ -60,7 +60,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/history"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#ffd402"
+
 
             />
 
@@ -92,6 +93,8 @@
             android:focusable="false"
             android:textSize="25sp"
             android:paddingLeft="30dp"
+            android:textStyle="bold"
+
 
             />
         <EditText
@@ -101,13 +104,25 @@
             app:layout_constraintTop_toBottomOf="@id/operationinput"
             android:hint="0"
             android:inputType="number"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
+            android:textColorHint="#ffd402"
+            android:textColor="#ffd402"
             android:focusable="false"
             android:textDirection="rtl"
             android:paddingRight="50dp"
 
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Result:"
+            android:textColor="#ffd402"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/resultinput"
+            app:layout_constraintTop_toTopOf="@id/resultinput" />
+
         <Button
             android:id="@+id/btnc"
             android:layout_width="0dp"
@@ -121,6 +136,7 @@
             android:background="@drawable/buttonshape"
             android:layout_margin="5dp"
             android:textColor="#ff0000"
+
 
             />
         <Button

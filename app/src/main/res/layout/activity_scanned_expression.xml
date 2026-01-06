@@ -52,12 +52,12 @@
         <EditText
             android:id="@+id/expresstionScanned"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_margin="10dp"
             android:padding="10dp"
             />
 

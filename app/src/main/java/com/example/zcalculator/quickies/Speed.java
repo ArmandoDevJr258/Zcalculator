@@ -31,7 +31,7 @@ public class Speed extends AppCompatActivity {
     private EditText input1,input2,activeInput;
     private Boolean isUpdating = false;
     private Button btn9,btn8,btn7,btn6,btn5,btn4,btn3,btn2,btn1,btn0;
-    private MaterialButton btnclear;
+    private MaterialButton btnclear,btnup,btndown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +60,8 @@ public class Speed extends AppCompatActivity {
         btn1= findViewById(R.id.btn1);
         btn0= findViewById(R.id.btn0);
         btnclear = findViewById(R.id.btnclear);
+        btnup = findViewById(R.id.btnup);
+        btndown = findViewById(R.id.btndown);
 
         String[] speedUnits1={
                 "Meters per second",
@@ -116,6 +118,13 @@ public class Speed extends AppCompatActivity {
                 activeInput.setSelection(activeInput.getText().length()); }
         }));
 
+        btnup.setOnClickListener((e->{
+            activeInput =input1;
+        }));
+        btndown.setOnClickListener((e->{
+            activeInput =input2;
+        }));
+
         ArrayAdapter<String> adapter =new ArrayAdapter<>(this, R.layout.spinner_item,speedUnits1);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner1.setAdapter(adapter);
@@ -145,11 +154,15 @@ public class Speed extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+
                 if (isUpdating) return;
-                if(charSequence.length()==0){
+                if (charSequence.length() == 0) {
+                    isUpdating = true;
                     input2.setText("");
+                    isUpdating = false;
                     return;
                 }
+
 
                 isUpdating = true;
                 double value = Double.parseDouble(charSequence.toString());
@@ -193,6 +206,7 @@ public class Speed extends AppCompatActivity {
                 isUpdating= false;
             }
         });
+        activeInput =input1;
         input1.setOnClickListener((e->{
             activeInput =input1;
         }));

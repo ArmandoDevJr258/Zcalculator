@@ -4,6 +4,7 @@ import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -146,17 +147,21 @@ public class MainCalculator extends AppCompatActivity {
 
         btnplus.setOnClickListener((e->{
             appendToActiveInput("+");
+            btnplus.setTextColor(Color.parseColor("#ffd402"));
 
         }));
         btnminus.setOnClickListener((e->{
             appendToActiveInput("-");
+            btnminus.setTextColor(Color.parseColor("#ffd402"));
         }));
         btntimes.setOnClickListener((e->{
             appendToActiveInput("*");
+            btntimes.setTextColor(Color.parseColor("#ffd402"));
         }));
         btndevide.setOnClickListener((e->{
 
             appendToActiveInput("/");
+            btndevide.setTextColor(Color.parseColor("#ffd402"));
         }));
 
         //return to home screen
