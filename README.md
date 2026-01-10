@@ -6,13 +6,13 @@ feel free to colab.
 
 # features added
 
-a basic calculator
+ a basic calculator ✔
 
-unit converters
+unit converters ✔
 
-scan to solve
+scan to solve ✔
 
-functiions to generate graphs
+functiions to generate graphs✔
 
 
 
