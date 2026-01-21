@@ -1,5 +1,6 @@
 package com.example.zcalculator;
 
+import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
@@ -20,6 +21,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.button.MaterialButton;
+
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
@@ -28,7 +32,7 @@ public class MainCalculator extends AppCompatActivity {
     private LinearLayout header;
     private ConstraintLayout  basicCalculatorLayout,cientificCalculatorLayout;
     private ImageButton btnrReturn;
-    private TextView txtbasic,txtcientific;
+    private TextView txtbasic,txtcientific,txtResult;
     private EditText operationinput,resultinput,activeInput;
     private Button btnc,btnparenteses,btnpercent,btnequals,btn9,btn8,btn7,btn6,btn5,btn4,btn3,btn2,btn1,btn0,btndot,btnplus,btnminus,btntimes,btndevide;
 
@@ -38,6 +42,7 @@ public class MainCalculator extends AppCompatActivity {
     private  boolean isOperatorClicked  = false;
     private boolean justPressedOperator = false;
     private Boolean isUpdating = false;
+    private MaterialButton btnClear,btnConverters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +81,9 @@ public class MainCalculator extends AppCompatActivity {
         btndevide= findViewById(R.id.btndevide);
         operationinput = findViewById(R.id.operationinput);
         resultinput = findViewById(R.id.resultinput);
+        txtResult = findViewById(R.id.txtResult);
+        btnClear = findViewById(R.id.btnClear);
+        btnConverters = findViewById(R.id.btnConverters);
 
 
 
@@ -134,6 +142,8 @@ public class MainCalculator extends AppCompatActivity {
 
         btnequals.setOnClickListener(e -> {
             calculateResult();
+            txtResult.setVisibility(VISIBLE);
+            resultinput.setAlpha(1.0f);
         });
 
 
@@ -141,8 +151,23 @@ public class MainCalculator extends AppCompatActivity {
         btnc.setOnClickListener(e -> {
             operationinput.setText("");
             resultinput.setText("");
-        });
+            txtResult.setVisibility(GONE);
+            resultinput.setAlpha(0.2f);
 
+        });
+        btnClear.setOnClickListener((e->{
+            if (activeInput==null) return;
+            String current = activeInput.getText().toString();
+            if (!current.isEmpty()){
+                activeInput.setText(current.substring(0,current.length()-1));
+
+
+                activeInput.setSelection(activeInput.getText().length()); }
+        }));
+        btnConverters.setOnClickListener((e->{
+            Intent intent = new Intent(MainCalculator.this, Quickies.class);
+            startActivity(intent);
+        }));
 
 
         btnplus.setOnClickListener((e->{

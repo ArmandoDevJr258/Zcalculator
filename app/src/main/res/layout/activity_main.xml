@@ -17,6 +17,7 @@
        app:layout_constraintEnd_toEndOf="parent"
        android:orientation="horizontal"
 
+
        >
        <TextView
            android:layout_width="wrap_content"
@@ -27,7 +28,7 @@
            android:textColor="@color/white"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toTopOf="parent"
-           android:layout_marginLeft="20dp"
+           android:layout_marginLeft="30dp"
            android:layout_marginTop="10dp"
            />
 
@@ -54,7 +55,7 @@
         app:layout_constraintBottom_toTopOf="@+id/graphCard"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="120dp"
-        android:background="@drawable/card"
+        android:background="@drawable/card_shadow"
         android:orientation="vertical"
         >
 
@@ -88,7 +89,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="120dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/card"
+        android:background="@drawable/card_shadow"
         android:orientation="vertical"
         >
 
@@ -119,8 +120,10 @@
         app:layout_constraintEnd_toStartOf="@id/scantoSolveCard"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/card"
+        android:background="@drawable/card_shadow"
         android:orientation="vertical"
+
+android:elevation="12dp"
         >
 
 
@@ -152,8 +155,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/card"
+        android:background="@drawable/card_shadow"
         android:orientation="vertical"
+        android:elevation="12dp"
         >
 
 
@@ -176,4 +180,173 @@
 
     </LinearLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/currency_shape_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        >
+        <TextView
+            android:id="@+id/txttite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Currency of the day"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See all"
+            android:textSize="20sp"
+            android:textColor="#897B54"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="20dp"
+            />
+        <TextView
+            android:id="@+id/txtcoin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Coin"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtbuy"
+            app:layout_constraintTop_toBottomOf="@id/txttite"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#FFC107"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtbuy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Buy"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/txtcoin"
+            app:layout_constraintEnd_toStartOf="@id/txtsell"
+            app:layout_constraintTop_toBottomOf="@id/txttite"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#FFC107"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:id="@+id/txtsell"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sell"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/txtbuy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txttite"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#FFC107"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtcoin1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Dollar ($)"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtbuy"
+            app:layout_constraintTop_toBottomOf="@id/txtcoin"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/txtbuyValue1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="63.64"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/txtcoin"
+            app:layout_constraintEnd_toStartOf="@id/txtsell"
+            app:layout_constraintTop_toBottomOf="@id/txtbuy"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#0AAD11"
+            android:textStyle="italic"
+
+            />
+        <TextView
+            android:id="@+id/txtsellValue1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="64.67"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/txtbuy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtsell"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#0AAD11"
+            android:textStyle="italic"
+            />
+        <TextView
+            android:id="@+id/txtcoin2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Euros (€)"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtbuy"
+            app:layout_constraintTop_toBottomOf="@id/txtcoin1"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/txtbuyValue2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="72.64"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/txtcoin"
+            app:layout_constraintEnd_toStartOf="@id/txtsell"
+            app:layout_constraintTop_toBottomOf="@id/txtbuyValue1"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#0AAD11"
+            android:textStyle="italic"
+
+            />
+        <TextView
+            android:id="@+id/txtsellValue2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="74.67"
+            android:textAlignment="center"
+            app:layout_constraintStart_toEndOf="@id/txtbuy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtsellValue1"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="#0AAD11"
+            android:textStyle="italic"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
