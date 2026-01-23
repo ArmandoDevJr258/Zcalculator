@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Units converter"
+            android:text="@string/Umits_converter"
             android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
@@ -70,29 +70,34 @@
             android:columnCount="3"
             android:padding="8dp"
             android:textAlignment="center"
+            android:alignmentMode="alignBounds"
+android:useDefaultMargins="true"
+            android:layout_gravity="center_horizontal"
 
 
 
 
             >
             <LinearLayout
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation= "vertical"
                 android:background="@drawable/card"
-
+               android:gravity="center"
                 android:layout_margin="10dp"
+
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/flash"
                     android:backgroundTint="@color/white"
                     />
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="power"
                     android:textAlignment="center"
@@ -103,18 +108,20 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardTemperature"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/thermometer"
                     android:backgroundTint="@color/white"
@@ -122,7 +129,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tempeture"
+                    android:text="@string/temperature"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -131,16 +138,18 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardEnergy"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/fire"
                     android:backgroundTint="@color/white"
@@ -148,7 +157,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Energy"
+                    android:text="@string/energy"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -157,16 +166,19 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardTime"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
+
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/hourglass"
                     android:backgroundTint="@color/white"
@@ -174,7 +186,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Time"
+                    android:text="@string/time"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -183,16 +195,18 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardData"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/cloud_network"
                     android:backgroundTint="@color/white"
@@ -200,7 +214,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Data"
+                    android:text="@string/data"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -209,17 +223,19 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardPresure"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
+                android:gravity="center"
                 android:layout_margin="10dp"
 
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/tool"
                     android:backgroundTint="@color/white"
@@ -227,7 +243,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Presure"
+                    android:text="@string/presure"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -237,16 +253,18 @@
 
             <LinearLayout
                 android:id="@+id/cardSpeed"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/flash"
                     android:backgroundTint="@color/white"
@@ -254,7 +272,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Speed"
+                    android:text="@string/speed"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -263,16 +281,18 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardArea"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/maximize"
                     android:backgroundTint="@color/white"
@@ -280,7 +300,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Area"
+                    android:text="@string/area"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -288,16 +308,18 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardLenght"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/measure"
                     android:backgroundTint="@color/white"
@@ -305,7 +327,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lenght"
+                    android:text="@string/lenght"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -314,16 +336,18 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardVolume"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/measure2"
                     android:backgroundTint="@color/white"
@@ -331,7 +355,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Volume"
+                    android:text="@string/volume"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -340,16 +364,18 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardMass"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/load"
                     android:backgroundTint="@color/white"
@@ -357,7 +383,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mass"
+                    android:text="@string/mass"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
@@ -366,17 +392,19 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/cardTip"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/flash"
                     android:backgroundTint="@color/white"
@@ -384,24 +412,26 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tip"
+                    android:text="@string/tip"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
                     />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/discount"
                     android:backgroundTint="@color/white"
@@ -416,16 +446,18 @@
                     />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/flash"
                     android:backgroundTint="@color/white"
@@ -441,16 +473,18 @@
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:layout_columnWeight="1"
                 android:orientation="vertical"
                 android:background="@drawable/card"
                 android:layout_margin="10dp"
+                android:gravity="center"
                 >
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+
                     android:layout_marginTop="20dp"
                     android:background="@drawable/flash"
                     android:backgroundTint="@color/white"
@@ -474,4 +508,5 @@
 
         </GridLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

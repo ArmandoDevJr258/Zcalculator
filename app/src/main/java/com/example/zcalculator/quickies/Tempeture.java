@@ -1,5 +1,6 @@
 package com.example.zcalculator.quickies;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -126,12 +127,8 @@ public class Tempeture extends AppCompatActivity {
             activeInput.setSelection(activeInput.getText().length()); }
         }));
         btnc.setOnClickListener((e->{
-            if (activeInput==null) return;
-            String current = activeInput.getText().toString();
-            if (!current.isEmpty()){
-
-
-                 }
+           input1.setText("");
+           input2.setText("");
         }));
 
         btnup.setOnClickListener((e->{
@@ -321,6 +318,7 @@ public class Tempeture extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private void appendToActiveInput(String text){
         if (activeInput ==null) return;
 

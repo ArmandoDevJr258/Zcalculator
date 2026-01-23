@@ -34,6 +34,7 @@
 
 
        <ImageButton
+           android:id="@+id/btnSettings"
            android:layout_width="30dp"
            android:layout_height="30dp"
            android:background="@drawable/settings"
@@ -57,20 +58,22 @@
         android:layout_marginTop="120dp"
         android:background="@drawable/card_shadow"
         android:orientation="vertical"
+        android:gravity="center"
         >
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
 
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#cccccc"
             android:background="@drawable/flash"
+
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Units converter"
+            android:text="@string/Umits_converter"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
@@ -91,20 +94,21 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/card_shadow"
         android:orientation="vertical"
+        android:gravity="center"
         >
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="50dp"
+
             android:layout_marginTop="30dp"
             android:background="@drawable/calculator"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#cccccc"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calculator"
+            android:text="@string/Calculator"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
@@ -122,6 +126,7 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/card_shadow"
         android:orientation="vertical"
+        android:gravity="center"
 
 android:elevation="12dp"
         >
@@ -130,15 +135,17 @@ android:elevation="12dp"
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="50dp"
+
             android:layout_marginTop="30dp"
 
-            android:background="@drawable/graph_report"
+
+            android:background="@drawable/linegraph"
+            android:backgroundTint="#cccccc"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Graph"
+            android:text="@string/Graph"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
@@ -158,21 +165,22 @@ android:elevation="12dp"
         android:background="@drawable/card_shadow"
         android:orientation="vertical"
         android:elevation="12dp"
+        android:gravity="center"
         >
 
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="50dp"
+
             android:layout_marginTop="30dp"
             android:background="@drawable/qr_code_scan"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#cccccc"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Scan to solve"
+            android:text="@string/scan"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
@@ -190,12 +198,23 @@ android:elevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
 
         >
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/recycle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/white"
+            />
         <TextView
             android:id="@+id/txttite"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Currency of the day"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/Curency_of_theday"
+           app:layout_constraintStart_toEndOf="@id/btnRefresh"
             android:layout_marginLeft="20dp"
             android:textSize="25sp"
             android:textColor="@color/white"
@@ -206,7 +225,7 @@ android:elevation="12dp"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="See all"
+            android:text="@string/more"
             android:textSize="20sp"
             android:textColor="#897B54"
             android:textStyle="bold"
@@ -219,7 +238,7 @@ android:elevation="12dp"
             android:id="@+id/txtcoin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Coin"
+            android:text="@string/coin"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/txtbuy"
@@ -233,7 +252,7 @@ android:elevation="12dp"
             android:id="@+id/txtbuy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Buy"
+            android:text="@string/buy"
             android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@id/txtcoin"
             app:layout_constraintEnd_toStartOf="@id/txtsell"
@@ -248,7 +267,7 @@ android:elevation="12dp"
             android:id="@+id/txtsell"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Sell"
+            android:text="@string/sell"
             android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@id/txtbuy"
             app:layout_constraintEnd_toEndOf="parent"
@@ -277,7 +296,7 @@ android:elevation="12dp"
             android:id="@+id/txtbuyValue1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="63.64"
+            android:text="10"
             android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@id/txtcoin"
             app:layout_constraintEnd_toStartOf="@id/txtsell"
@@ -292,7 +311,7 @@ android:elevation="12dp"
             android:id="@+id/txtsellValue1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="64.67"
+            android:text="10"
             android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@id/txtbuy"
             app:layout_constraintEnd_toEndOf="parent"

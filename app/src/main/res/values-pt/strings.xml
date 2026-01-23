@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Zcalculator</string>
+    <string name="Umits_converter">Conversor de unidades</string>
+    <string name="Calculator">Calculadora</string>
+    <string name="Graph">Gráfico</string>
+    <string name="scan">Scan e resolva</string>
+    <string name="Curency_of_theday">Cambio do dia</string>
+    <string name="more">mais</string>
+    <string name="coin">Moeda</string>
+    <string name="buy">Compra</string>
+    <string name="sell">Venda</string>
+    <string name="basic">Básica</string>
+    <string name="Cientific_calculator">Calculadora Cientifica</string>
+
+    <string name="power">Power</string>
+    <string name="temperature">Temperatura </string>
+    <string name="energy">Energia</string>
+    <string name="time">Tempo</string>
+    <string name="data">Dados</string>
+    <string name="presure">Pressão</string>
+    <string name="speed">Velocidade</string>
+    <string name="area">Área</string>
+    <string name="lenght">Comprimento</string>
+    <string name="volume">Volume</string>
+    <string name="mass">Massa</string>
+    <string name="tip">Tip</string>
+
+
+</resources>

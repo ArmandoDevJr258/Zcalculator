@@ -143,7 +143,7 @@ public class FunctionToGraph extends AppCompatActivity {
             dataSet.setDrawCircles(false);
             dataSet.setDrawCircleHole(false);
             dataSet.setMode(LineDataSet.Mode.LINEAR);
-            dataSet.setLineWidth(2.5f);
+            dataSet.setLineWidth(4.5f);
             dataSet.setDrawValues(false);
             dataSet.setHighlightEnabled(false);
             dataSet.setColor(Color.GREEN);
